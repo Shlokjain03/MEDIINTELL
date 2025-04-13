@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mediintell</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #e6f0ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header {
+      background-color: #007bff;
+    }
+    header a span {
+      color: white;
+    }
+    .nav-link {
+      color: white;
+    }
+    .nav-link.active {
+      background-color: #0056b3;
+    }
+    .hero-section {
+      background-color: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+    .section-title {
+      font-weight: 700;
+      color: #003366;
+    }
+    .feature-title {
+      font-weight: 600;
+      color: #004080;
+    }
+    .alert-warning {
+      background-color: #fff3cd;
+      border-color: #ffeeba;
+      color: #856404;
+    }
+    .features-images {
+      background-color: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 40px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+    .feature-img {
+      width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .feature-img:hover {
+      transform: scale(1.03);
+      .custom-footer {
+        background-color: #f8f9fa;
+        border-top: 4px solid #2c3e50;
+        padding: 50px 30px;
+        font-family: 'Segoe UI', sans-serif;
+      }
+    
+      .custom-footer h5.footer-heading {
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+    
+      .custom-footer .footer-text {
+        color: #6c757d;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+    
+      .custom-footer .nav-link {
+        font-size: 15px;
+        color: #6c757d;
+        transition: color 0.2s ease-in-out;
+      }
+    
+      .custom-footer .nav-link:hover {
+        color: #3498db;
+        text-decoration: underline;
+      }
+    
+      .custom-footer .text-muted {
+        font-size: 14px;
+      }
+    
+      .custom-footer img {
+        border-radius: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <!-- Header -->
+    <header class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-5 px-3 rounded shadow-sm">
+      <a href="/" class="d-flex align-items-center text-decoration-none">
+        <img src="static/images/logo1.png" alt="Mediintell Logo" width="80" height="80" class="me-3">
+        <span class="fs-3 fw-bold">Mediintell</span>
+      </a>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="{{ url_for('checker') }}" class="nav-link">MediCheck</a></li>
+        <li class="nav-item"><a href="{{ url_for('upload') }}" class="nav-link">Medicine Identifier</a></li>
+      </ul>
+    </header>
+
+    <!-- New Hero Section with Image -->
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="static/images/pic1.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+          Smarter Healthcare Starts with Mediintell
+        </h1>
+        <p class="lead">
+          Discover a new era of intelligent health assistance. Mediintell combines AI with medical knowledge to help you check symptoms, analyze medicines, and make informed health choices — anytime, anywhere.
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a href="{{ url_for('checker') }}" class="btn btn-primary btn-lg px-4 me-md-2">Try Symptom Checker</a>
+          <a href="{{ url_for('upload') }}" class="btn btn-outline-secondary btn-lg px-4">Explore Medicine Info</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Original Hero Section -->
+    <div class="hero-section">
+      <h1 class="section-title mb-3">Welcome to Mediintell</h1>
+      <p class="lead">Mediintell is a cutting-edge digital health assistant built to provide intelligent, accessible, and reliable medical insights. Our mission is to empower individuals with personalized tools that enhance healthcare awareness and decision-making.</p>
+
+      <div class="mt-5">
+        <h4 class="feature-title">🔍 AI-Powered Symptom Checker</h4>
+        <p>Interact with our intelligent virtual assistant by entering symptoms to receive preliminary analysis. Get insights on potential health conditions, recommended actions, and when it's crucial to consult a medical professional.</p>
+
+        <h4 class="feature-title mt-4">💊 Comprehensive Medicine Analyzer</h4>
+        <p>Search and explore detailed information on medications including usage, dosage guidelines, side effects, and possible drug interactions — all aimed at promoting safer self-care.</p>
+      </div>
+
+      <div class="alert alert-warning mt-4" role="alert">
+        ⚠ <strong>Disclaimer:</strong> Mediintell is intended for informational purposes only and should not be used as a substitute for professional medical advice, diagnosis, or treatment.
+      </div>
+
+      <p class="mt-4 fw-semibold">Experience the future of healthcare — intelligent, intuitive, and focused on your well-being.</p>
+    </div>
+
+    <!-- Features Image Section -->
+    <div class="features-images mt-5">
+      <h2 class="section-title mb-4">Features</h2>
+      <div class="row g-4">
+        <div class="col-md-6 text-center">
+          <a href="{{ url_for('checker') }}" target="_blank">
+            <img src="static/images/pic2.png" alt="Symptom Checker" class="feature-img">
+          </a>
+          <p class="mt-2 fw-medium">Symptom Checker</p>
+        </div>
+        <div class="col-md-6 text-center">
+          <a href="{{ url_for('upload') }}" target="_blank">
+            <img src="static/images/pic3.png" alt="Medicine Analyzer" class="feature-img">
+          </a>
+          <p class="mt-2 fw-medium">Medicine Analyzer</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features  Section -->
+    <div class="container px-4 py-5" id="featured-3">
+      <h2 class="pb-2 border-bottom">How It Works</h2>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3" style="width: 60px; height: 60px;">
+            <img src="static/images/num1.png" alt="Symptom Icon" class="img-fluid" style="max-width: 100%; max-height: 100%;">
+          </div>
+          <h3 class="fs-2 text-body-emphasis">Enter Your Symptoms</h3>
+          <p>Describe your symptoms or take a picture of your medication.</p>
+        </div>        
+        <div class="feature col">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3" style="width: 60px; height: 60px;">
+            <img src="static/images/num2.png" alt="Symptom Icon" class="img-fluid" style="max-width: 100%; max-height: 100%;">
+          </div>
+          <h3 class="fs-2 text-body-emphasis">AI Analysis</h3>
+          <p>Our AI processes the information to generate insights</p>
+        </div>
+        <div class="feature col">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3" style="width: 60px; height: 60px;">
+            <img src="static/images/num3.png" alt="Symptom Icon" class="img-fluid" style="max-width: 100%; max-height: 100%;">
+          </div>
+          <h3 class="fs-2 text-body-emphasis">Get Results</h3>
+          <p>Receive possible diagnoses or medication information with recommendations.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Heros -->
+    <div class="px-4 py-5 my-5 text-center">
+      <img src="static/images/hospital.png" class="d-block mx-auto mb-4" alt="Symptom Icon" class="img-fluid" height="300" width="300">
+      <h1 class="display-5 fw-bold text-body-emphasis">Your Health Journey Starts Here</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Take the first step towards better understanding your health with CareCompass.</p>
+        
+      </div>
+    </div>
+
+
+    <!-- Footer -->
+<footer class="custom-footer row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+  <div class="col mb-3">
+    <a href="/" class="d-flex align-items-center mb-3 text-decoration-none" aria-label="Mediintell">
+      <img src="static/images/logo1.png" alt="Mediintell Logo" width="40" height="40"> 
+    </a>
+    <p class="text-muted">© 2025 Mediintell</p>
+  </div>
+  <div class="col mb-3">
+  </div>
+  <div class="col mb-3">
+    <h5 class="footer-heading">Mediintell</h5>
+    <p class="footer-text">An AI-powered health assistant to help you understand your symptoms and identify medications quickly and accurately.</p>
+  </div>
+  <div class="col mb-3">
+    <h5 class="footer-heading">Quick Links</h5>
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2"><a href="{{ url_for('home') }}" class="nav-link p-0 text-muted">Home</a></li>
+      <li class="nav-item mb-2"><a href="{{ url_for('checker') }}" class="nav-link p-0 text-muted">Features</a></li>
+      <li class="nav-item mb-2"><a href="{{ url_for('upload') }}" class="nav-link p-0 text-muted">Pricing</a></li>
+      
+    </ul>
+  </div>
+  <div class="col mb-3">
+    <h5 class="footer-heading">Disclaimer</h5>
+    <p class="footer-text">This application is for informational purposes only. Always consult a qualified healthcare professional for medical advice.</p>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
