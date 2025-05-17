@@ -96,4 +96,4 @@ def process_upload():
     return render_template("medcine_result.html", name=matched_name or detected_text,
                            basic_info=basic_info, extra_info=extra_info)
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
